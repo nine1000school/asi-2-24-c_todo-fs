@@ -1,5 +1,5 @@
 const printTodo = ({ id, done, description }) => {
-  console.log(`[${id}] [${done ? "X" : " "}] ${description}`)
+  console.log(`[${done ? "X" : " "}] #${id} ${description}`)
 }
 
 export default printTodo
