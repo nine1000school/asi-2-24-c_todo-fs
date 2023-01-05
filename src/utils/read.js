@@ -1,8 +1,8 @@
-import { readFileSync } from "node:fs"
+import { readFile } from "node:fs/promises"
 import { TODOS_PATH } from "../run.js"
 
-const read = () => {
-  const content = readFileSync(TODOS_PATH, { flag: "a+", encoding: "utf-8" })
+const read = async () => {
+  const content = await readFile(TODOS_PATH, { flag: "a+", encoding: "utf-8" })
 
   return content
     ? JSON.parse(content)

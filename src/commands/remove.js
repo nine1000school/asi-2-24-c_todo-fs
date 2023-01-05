@@ -3,11 +3,11 @@ import printTodo from "../utils/printTodo.js"
 import read from "../utils/read.js"
 import write from "../utils/write.js"
 
-const remove = (options) => {
+const remove = async (options) => {
   const idToBeRemoved = getTodoIdFromOptions(options)
-  const { lastId, todos } = read()
+  const { lastId, todos } = await read()
 
-  write({
+  await write({
     lastId,
     todos: todos.filter(({ id }) => id !== idToBeRemoved),
   })

@@ -3,7 +3,7 @@ import read from "../utils/read.js"
 import write from "../utils/write.js"
 import help from "./help.js"
 
-const add = (options) => {
+const add = async (options) => {
   const [description] = options
 
   if (!description) {
@@ -12,7 +12,7 @@ const add = (options) => {
     process.exit(1)
   }
 
-  const { lastId, todos } = read()
+  const { lastId, todos } = await read()
   const newId = lastId + 1
   const todo = {
     id: newId,
@@ -20,7 +20,7 @@ const add = (options) => {
     done: false,
   }
 
-  write({
+  await write({
     lastId: newId,
     todos: [...todos, todo],
   })

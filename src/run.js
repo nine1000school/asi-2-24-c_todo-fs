@@ -15,7 +15,7 @@ const commands = {
   toggle,
 }
 
-const run = (args) => {
+const run = async (args) => {
   const [commandName, ...options] = args
   const command = commands[commandName]
 
@@ -25,7 +25,7 @@ const run = (args) => {
     process.exit(1)
   }
 
-  command(options)
+  await command(options)
 }
 
 export default run
