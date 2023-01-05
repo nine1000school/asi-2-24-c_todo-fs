@@ -5,7 +5,7 @@ COMMAND
   add DESCRIPTION
   list
   remove TODO_ID
-  done TODO_ID
+  toggle TODO_ID
 `)
 }
 

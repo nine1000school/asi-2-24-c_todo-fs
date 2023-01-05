@@ -3,12 +3,13 @@ import printTodo from "../utils/printTodo.js"
 import read from "../utils/read.js"
 import write from "../utils/write.js"
 
-const done = (options) => {
+const toggle = (options) => {
   const idToBeUpdated = getTodoIdFromOptions(options)
   const { lastId, todos } = read()
+  const todo = todos.find(({ id }) => idToBeUpdated === id)
   const updatedTodo = {
-    ...todos.find(({ id }) => idToBeUpdated === id),
-    done: true,
+    ...todo,
+    done: !todo.done,
   }
 
   write({
@@ -21,4 +22,4 @@ const done = (options) => {
   printTodo(updatedTodo)
 }
 
-export default done
+export default toggle
