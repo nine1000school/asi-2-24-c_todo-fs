@@ -1,5 +1,6 @@
 import { resolve } from "node:path"
 import add from "./commands/add.js"
+import done from "./commands/done.js"
 import help from "./commands/help.js"
 import list from "./commands/list.js"
 import remove from "./commands/remove.js"
@@ -11,6 +12,7 @@ const commands = {
   help,
   list,
   remove,
+  done,
 }
 
 const run = (args) => {
